@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stream Clip Publisher</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1b1f24;
+    background: #ffffff;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 30px; line-height: 1.25; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .tagline { color: #5b6470; margin: 0 0 40px; font-size: 17px; }
+  h2 { font-size: 19px; margin: 40px 0 12px; letter-spacing: -0.01em; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  a { color: #0a66c2; }
+  .note {
+    border: 1px solid #e3e6ea;
+    border-radius: 10px;
+    padding: 16px 18px;
+    background: #fafbfc;
+    margin: 24px 0;
+  }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid #e3e6ea;
+    color: #5b6470;
+    font-size: 14px;
+  }
+  footer a { margin-right: 18px; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e9ec; background: #14171a; }
+    .tagline, footer { color: #9aa4b0; }
+    .note { background: #1c2025; border-color: #2c3238; }
+    footer { border-color: #2c3238; }
+    a { color: #6cb0f5; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Stream Clip Publisher</h1>
+  <p class="tagline">A self-hosted tool for turning livestream highlights into short-form videos and publishing them to the creator's own social accounts.</p>
+
+  <h2>What it does</h2>
+  <p>Stream Clip Publisher records a livestream, detects moments where the chat reacts strongly, and automatically edits those moments into vertical short-form clips: 9:16 aspect ratio, webcam framing, and a generated caption burned into the video.</p>
+  <p>Finished clips are collected in a local dashboard. From there the operator reviews each clip, edits its caption and hashtags, chooses the audience and interaction settings, and publishes it to their own TikTok and YouTube accounts.</p>
+
+  <h2>Who uses it</h2>
+  <p>The application is operated by an individual developer and is used only to publish to social media accounts that the operator personally owns. It is not a public service, it has no user registration, and it does not accept content from third parties.</p>
+
+  <div class="note">
+    <p style="margin:0"><strong>Content ownership.</strong> All published material consists of short excerpts of livestreams that the operator has permission to clip and redistribute. No third-party content is uploaded through this application.</p>
+  </div>
+
+  <h2>How TikTok is used</h2>
+  <p>The application uses the TikTok Login Kit and the TikTok Content Posting API. Connecting a TikTok account is initiated by the account owner through the standard TikTok authorization screen. Before any content is sent to TikTok, the operator sees a preview of the clip, its caption, the selected audience and the selected interaction settings, and confirms the publication explicitly.</p>
+  <p>The application never adds watermarks or logos to content, and never posts on behalf of an account without an explicit confirmation for that specific post.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this application can be sent to <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>.</p>
+
+  <footer>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <div style="margin-top:10px">Last updated: August 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>

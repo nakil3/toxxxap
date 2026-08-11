@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authorization complete — Stream Clip Publisher</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1b1f24;
+    background: #ffffff;
+  }
+  .card {
+    max-width: 560px;
+    width: 100%;
+    border: 1px solid #e3e6ea;
+    border-radius: 14px;
+    padding: 32px;
+    background: #fafbfc;
+  }
+  h1 { font-size: 22px; margin: 0 0 10px; letter-spacing: -0.01em; }
+  p { margin: 0 0 14px; }
+  .muted { color: #5b6470; font-size: 15px; }
+  .url {
+    display: block;
+    margin: 18px 0 10px;
+    padding: 14px 16px;
+    border: 1px solid #d7dbe0;
+    border-radius: 10px;
+    background: #ffffff;
+    font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+  button {
+    appearance: none;
+    border: 1px solid #0a66c2;
+    background: #0a66c2;
+    color: #fff;
+    border-radius: 9px;
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  button:hover { background: #095299; }
+  .ok { color: #1a7f43; font-size: 14px; margin-left: 12px; visibility: hidden; }
+  .ok.show { visibility: visible; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e9ec; background: #14171a; }
+    .card { background: #1c2025; border-color: #2c3238; }
+    .muted { color: #9aa4b0; }
+    .url { background: #14171a; border-color: #2c3238; }
+    .ok { color: #57c785; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Authorization complete</h1>
+  <p class="muted">Copy the full address below and paste it back into the terminal where the authorization was started.</p>
+
+  <code class="url" id="url">loading…</code>
+
+  <p>
+    <button id="copy" type="button">Copy address</button>
+    <span class="ok" id="ok">Copied</span>
+  </p>
+
+  <p class="muted" style="margin-top:22px">This page does not send or store anything. It only shows the address your browser was redirected to, so it can be passed to the application running on your own computer.</p>
+</div>
+
+<script>
+  var urlEl = document.getElementById('url');
+  var full = window.location.href;
+  urlEl.textContent = full;
+
+  document.getElementById('copy').addEventListener('click', function () {
+    var done = function () {
+      var ok = document.getElementById('ok');
+      ok.classList.add('show');
+      setTimeout(function () { ok.classList.remove('show'); }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(full).then(done, function () {});
+    } else {
+      var r = document.createRange();
+      r.selectNode(urlEl);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+      try { document.execCommand('copy'); done(); } catch (e) {}
+    }
+  });
+</script>
+</body>
+</html>

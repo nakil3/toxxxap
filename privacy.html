@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Stream Clip Publisher</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1b1f24;
+    background: #ffffff;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 30px; line-height: 1.25; margin: 0 0 6px; letter-spacing: -0.02em; }
+  .updated { color: #5b6470; margin: 0 0 40px; font-size: 15px; }
+  h2 { font-size: 19px; margin: 38px 0 12px; letter-spacing: -0.01em; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  a { color: #0a66c2; }
+  table { border-collapse: collapse; width: 100%; margin: 0 0 16px; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 12px; border: 1px solid #e3e6ea; vertical-align: top; }
+  th { background: #fafbfc; font-weight: 600; }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid #e3e6ea;
+    color: #5b6470;
+    font-size: 14px;
+  }
+  footer a { margin-right: 18px; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e9ec; background: #14171a; }
+    .updated, footer { color: #9aa4b0; }
+    th { background: #1c2025; }
+    th, td { border-color: #2c3238; }
+    footer { border-color: #2c3238; }
+    a { color: #6cb0f5; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Stream Clip Publisher · Last updated: August 2026</p>
+
+  <p>Stream Clip Publisher ("the application") is a self-hosted tool operated by an individual developer. This policy explains what data the application handles, where it is stored, and how it is used. The application has no server component, no user accounts and no analytics: it runs entirely on the operator's own computer.</p>
+
+  <h2>1. Who operates this application</h2>
+  <p>The application is operated by YOUR_NAME, an independent developer. Contact: <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>.</p>
+
+  <h2>2. What data is collected</h2>
+  <p>The application only handles data belonging to the person who runs it and connects their own social accounts.</p>
+
+  <table>
+    <tr>
+      <th>Data</th>
+      <th>Why it is needed</th>
+    </tr>
+    <tr>
+      <td>TikTok access token and refresh token</td>
+      <td>To authenticate API requests when uploading a video to the connected account.</td>
+    </tr>
+    <tr>
+      <td>TikTok account nickname, username and avatar URL</td>
+      <td>Displayed in the publishing panel so the operator can see which account a post will go to before confirming it.</td>
+    </tr>
+    <tr>
+      <td>TikTok account posting settings (available privacy levels, whether comment, duet or stitch are disabled, maximum video duration)</td>
+      <td>Used to build the publishing form so that it reflects the creator's own TikTok settings and does not offer options the account does not allow.</td>
+    </tr>
+    <tr>
+      <td>Video files produced by the application</td>
+      <td>The clips themselves, created locally from a livestream recording and uploaded to the connected account when the operator confirms publication.</td>
+    </tr>
+    <tr>
+      <td>Publication log (timestamp, target account, result of the upload)</td>
+      <td>Shown in the dashboard so the operator can see what was published and diagnose failures.</td>
+    </tr>
+  </table>
+
+  <p>The application does not collect names, email addresses, phone numbers, location, contacts, browsing history or any other personal information. It does not use cookies, trackers or third-party analytics.</p>
+
+  <h2>3. Where data is stored</h2>
+  <p>All data listed above is stored locally, in files on the operator's own computer, in the application's working directory. Access tokens are kept in local token files, one per connected account. Video files are kept in a local folder and are deleted automatically after they have been published.</p>
+  <p>There is no remote database, no cloud storage and no backend service operated by this application.</p>
+
+  <h2>4. How data is shared</h2>
+  <p>Data is never sold, rented or shared with third parties. Data leaves the operator's computer in exactly two situations:</p>
+  <ul>
+    <li>A video file, its caption and its publishing settings are sent to TikTok when the operator confirms a publication.</li>
+    <li>A video file and its metadata are sent to YouTube when the operator publishes to a connected YouTube account.</li>
+  </ul>
+  <p>In both cases the data goes only to the platform the content is being published to, and is handled from that point on according to that platform's own privacy policy.</p>
+
+  <h2>5. How long data is kept</h2>
+  <p>Access tokens are kept until the operator disconnects the account or the token is revoked. Video files are deleted after publication. Publication logs are kept locally and can be cleared at any time by deleting the corresponding files.</p>
+
+  <h2>6. Revoking access</h2>
+  <p>Authorization can be withdrawn at any time from the TikTok app itself, in the security settings section that manages permissions granted to connected applications. Removing the authorization there immediately invalidates the tokens held by the application.</p>
+  <p>Locally, deleting the application's token files has the same effect: the application loses access and must be re-authorized before it can publish again.</p>
+
+  <h2>7. Children</h2>
+  <p>The application is not directed at children and is not intended for use by anyone under the minimum age required by the platforms it connects to.</p>
+
+  <h2>8. Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be published at this address with a new "last updated" date.</p>
+
+  <h2>9. Contact</h2>
+  <p>For any question about this policy or about data handled by the application, write to <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a>.</p>
+
+  <footer>
+    <a href="index.html">Home</a>
+    <a href="terms.html">Terms of Service</a>
+  </footer>
+
+</div>
+</body>
+</html>
